@@ -1,0 +1,12 @@
+
+package org.drools.demo;
+
+global java.util.Set controlSet;
+
+rule "will execute per each Measurement having ID color"
+agenda-group "agroup1"
+when
+	Measurement( id == "color", $colorVal : val )
+then
+	controlSet.add($colorVal);
+end
